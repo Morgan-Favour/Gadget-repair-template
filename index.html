@@ -1,13 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Vite App</title>
 </head>
+
 <body>
+    <div class="hidden md:flex space-x-4 justify-between px-20 py-4 border-b border-gray-200">
+        <div>
+            <ul class="flex space-x-4 items-center">
+                <li><a href=""><i class="fa-brands fa-facebook text-primary"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-x-twitter text-primary"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube text-primary"></i></a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="flex justify-between items-center space-x-10">
+                <li><i class="fa-solid fa-envelope text-primary"></i> contact@fixman.com</li>
+                <li><i class="fa-solid fa-phone-flip text-primary"></i> (001) 1231 2341</li>
+                <li> <i class="fa-solid fa-clock text-primary"></i> Mon - Fri: 08:00 - 17:00</li>
+            </ul>
+        </div>
+    </div>
+    <nav class="flex items-center justify-between px-6 md:px-20 py-4 bg-white">
+        <!-- Logo -->
+        <img src="logo.png" alt="Logo" class="w-20 md:w-32 h-auto" />
+
+        <!-- Hamburger Button (Mobile Only) -->
+        <button id="menu-toggle" class="md:hidden text-2xl text-black focus:outline-none" aria-label="Toggle Menu"> <i class="fa-solid fa-bars"></i></button><!-- close menu-->
+
+        <!-- Navigation Links -->
+        <ul id="menu"
+            class="fixed inset-y-0 right-0 w-64 bg-white shadow-md transform translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:flex md:flex-row md:space-x-10 md:w-auto md:shadow-none z-20">
+            <li class="md:hidden flex justify-end p-4"><button id="menu-close" class="text-2xl text-black focus:outline-none" aria-label="Close Menu"><i class="fa-solid fa-close"></i></button></li> <!-- close menu-->
+            <li><a href="#" class="block px-4 py-2 text-black font-poppins hover:text-primary"> Home</a></li>
+            <li><a href="#" class="block px-4 py-2 text-black font-poppins hover:text-primary"> About Us</a></li>
+            <li><a href="#" class="block px-4 py-2 text-black font-poppins hover:text-primary">Services</a></li>
+            <li><a href="#" class="block px-4 py-2 text-black font-poppins hover:text-primary">Contact</a></li>
+            <li><a href="#" class="block text-white btn-primary text-center">BookNow</a></li>
+        </ul>
+    </nav>
+
+   <main class="bg-slider min-h-screen flex py-10 relative">
+  <div class="absolute inset-0 bg-[url('./public/home-bg-1.jpg')] bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out" id="bg-1"></div>
+  <div class="absolute inset-0 bg-[url('./public/home-bg-2.jpg')] bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out" id="bg-2"></div>
+  <div class="absolute inset-0 bg-[url('./public/home-bg-3.jpg')] bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out" id="bg-3"></div>
+  <div class="relative z-10 flex flex-col md:flex-row justify-between px-6 md:px-20 py-4 w-full text-center md:text-left items-center my-10">
+    <div class="w-full md:w-[50%]">
+      <h1 class="text-4xl md:text-[100px] font-bebas text-white">Best Phone and <br> Laptop Repair <br>Service</h1>
+      <p class="pr-6 py-10 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+      <a href="" class="btn-secondary">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
     
+    <div class="mt-10 md:mt-0">
+      <img src="device-broken.png" alt="" class="w-50 md:w-65 h-auto mx-auto align-left">
+    </div>
+  </div>
+</main>
+
+<section class="mt-0 md:mt-[-100px] z-10 relative">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-6 md:px-20 py-10">
+        <div class="bg-white space-y-6 px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+            <img src="service-mobile.png" alt="" class="w-20 rounded-full mx-auto">
+            <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Mobile Services</h2>
+            <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="bg-gray-100 space-y-6 px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+            <img src="service-tablet.png" alt="" class="w-20 rounded-full mx-auto">
+            <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Tablet Services</h2>
+            <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="bg-white space-y-6 px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+            <img src="service-lp.png" alt="" class="w-20 rounded-full mx-auto">
+            <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Laptop Services</h2>
+            <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="bg-gray-100 space-y-6 px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+            <img src="service-pc.png" alt="" class="w-20 rounded-full mx-auto">
+            <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">PC Services</h2>
+            <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        
+    </div>
+</section>
+
+<section class="text-center py-10 space-y-6">
+    <h2 class="text-xl text-primary font-semibold">SERVICES</h2>
+    <h1 class="text-black text-5xl font-bebas ">choose fixman services</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols- lg:grid-cols-3 gap-10 px-6 md:px-20 py-10">
+         <div class="bg-black h-100 space-y-6 px-6 py-10 shadow-lg hover:border-b-10 hover:border-primary transition-all duration-200">
+            <img src="service-mobile.png" alt="" class="w-20 rounded-full mx-auto">
+            <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Mobile Services</h2>
+            <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            
+        </div>
+         <div class="bg-black space-y-6 px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+            <img src="service-mobile.png" alt="" class="w-20 rounded-full mx-auto">
+            <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Mobile Services</h2>
+            <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+         <div class="bg-black space-y-6 px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+            <img src="service-mobile.png" alt="" class="w-20 rounded-full mx-auto">
+            <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Mobile Services</h2>
+            <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+</section>
+
+    <script src="./src/main.js"></script>
 </body>
+
 </html>
