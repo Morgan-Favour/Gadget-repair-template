@@ -36,3 +36,28 @@ function changeBackground() {
 
 changeBackground();
 setInterval(changeBackground, 5000);
+
+
+document.querySelectorAll('.toggle-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const content = btn.nextElementSibling;
+    const iconContainer = btn.querySelector('.icon-toggle');
+    const plusIcon = iconContainer.querySelector('.fa-plus');
+    const minusIcon = iconContainer.querySelector('.fa-minus');
+
+    // Determine if content is open
+    const isOpen = !content.classList.contains('hidden');
+
+    // Toggle content visibility
+    content.classList.toggle('hidden');
+
+    // Toggle icons using !hidden
+    if (isOpen) {
+      plusIcon.classList.remove('hidden', '!hidden');
+      minusIcon.classList.add('hidden', '!hidden');
+    } else {
+      plusIcon.classList.add('hidden', '!hidden');
+      minusIcon.classList.remove('hidden', '!hidden');
+    }
+  });
+});
