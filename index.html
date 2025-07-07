@@ -11,45 +11,50 @@
     <title>Vite App</title>
 </head>
 
-<body>
-    <div class="hidden md:flex space-x-4 justify-between px-20 py-4 border-b border-gray-200">
-        <div>
-            <ul class="flex space-x-4 items-center">
-                <li><a href=""><i class="fa-brands fa-facebook text-primary"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-x-twitter text-primary"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-youtube text-primary"></i></a></li>
-            </ul>
+<body class="scroll-smooth">
+    <!-- HEADER  -->
+    <header>
+        <!-- SUB NAVIGATION -->
+        <div class="hidden md:flex space-x-4 justify-between px-20 py-4 border-b border-gray-200">
+            <div>
+                <ul class="flex space-x-4 items-center">
+                    <li><a href=""><i class="fa-brands fa-facebook text-primary"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-x-twitter text-primary"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-youtube text-primary"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="flex justify-between items-center space-x-10">
+                    <li><i class="fa-solid fa-envelope text-primary"></i> contact@fixman.com</li>
+                    <li><i class="fa-solid fa-phone-flip text-primary"></i> (001) 1231 2341</li>
+                    <li> <i class="fa-solid fa-clock text-primary"></i> Mon - Fri: 08:00 - 17:00</li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <ul class="flex justify-between items-center space-x-10">
-                <li><i class="fa-solid fa-envelope text-primary"></i> contact@fixman.com</li>
-                <li><i class="fa-solid fa-phone-flip text-primary"></i> (001) 1231 2341</li>
-                <li> <i class="fa-solid fa-clock text-primary"></i> Mon - Fri: 08:00 - 17:00</li>
+        <!-- MAIN NAVIGATION  -->
+        <nav class="flex items-center justify-between px-6 md:px-20 py-4 bg-white">
+            <!-- Logo -->
+            <img src="logo.png" alt="Logo" class="w-20 md:w-32 h-auto" />
+
+            <!-- Hamburger Button (Mobile Only) -->
+            <button id="menu-toggle" class="md:hidden text-2xl text-black focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i></button><!-- close menu-->
+
+            <!-- Navigation Links -->
+            <ul id="menu"
+                class="fixed inset-y-0 right-0 w-64 bg-white shadow-md transform translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:flex md:flex-row md:space-x-10 md:w-auto md:shadow-none z-20">
+                <li class="md:hidden flex justify-end p-4"><button id="menu-close"
+                        class="text-2xl text-black focus:outline-none" aria-label="Close Menu"><i
+                            class="fa-solid fa-close"></i></button></li> <!-- close menu-->
+                <li><a href="#about-us" class="block px-4 py-2 text-black font-poppins hover:text-primary"> About Us</a></li>
+                <li><a href="#services" class="block px-4 py-2 text-black font-poppins hover:text-primary">Services</a></li>
+                <li><a href="#faqs" class="block px-4 py-2 text-black font-poppins hover:text-primary"> FAQs</a></li>
+                <li><a href="#contact" class="block px-4 py-2 text-black font-poppins hover:text-primary">Contact</a></li>
+                <li><a href="#" class="block text-white btn-primary text-center">BookNow</a></li>
             </ul>
-        </div>
-    </div>
-    <nav class="flex items-center justify-between px-6 md:px-20 py-4 bg-white">
-        <!-- Logo -->
-        <img src="logo.png" alt="Logo" class="w-20 md:w-32 h-auto" />
-
-        <!-- Hamburger Button (Mobile Only) -->
-        <button id="menu-toggle" class="md:hidden text-2xl text-black focus:outline-none" aria-label="Toggle Menu"> <i
-                class="fa-solid fa-bars"></i></button><!-- close menu-->
-
-        <!-- Navigation Links -->
-        <ul id="menu"
-            class="fixed inset-y-0 right-0 w-64 bg-white shadow-md transform translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:flex md:flex-row md:space-x-10 md:w-auto md:shadow-none z-20">
-            <li class="md:hidden flex justify-end p-4"><button id="menu-close"
-                    class="text-2xl text-black focus:outline-none" aria-label="Close Menu"><i
-                        class="fa-solid fa-close"></i></button></li> <!-- close menu-->
-            <li><a href="#" class="block px-4 py-2 text-black font-poppins hover:text-primary"> Home</a></li>
-            <li><a href="#" class="block px-4 py-2 text-black font-poppins hover:text-primary"> About Us</a></li>
-            <li><a href="#" class="block px-4 py-2 text-black font-poppins hover:text-primary">Services</a></li>
-            <li><a href="#" class="block px-4 py-2 text-black font-poppins hover:text-primary">Contact</a></li>
-            <li><a href="#" class="block text-white btn-primary text-center">BookNow</a></li>
-        </ul>
-    </nav>
-
+        </nav>
+    </header>
+    <!-- HERO SECTION  -->
     <main class="bg-slider min-h-screen flex py-10 relative">
         <div class="absolute inset-0 bg-[url('./public/home-bg-1.jpg')] bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out"
             id="bg-1"></div>
@@ -73,41 +78,45 @@
         </div>
     </main>
 
-    <section class="mt-0 md:mt-[-100px] z-10 relative">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-6 md:px-20 py-10">
-            <div
-                class="bg-white space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
-                <img src="service-mobile.png" alt="" class="w-20 rounded-full mx-auto">
-                <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Mobile Services</h2>
-                <div class="mx-auto my-2 h-1 w-15 rounded bg-primary"></div>
-                <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div
-                class="bg-gray-100 space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
-                <img src="service-tablet.png" alt="" class="w-20 rounded-full mx-auto">
-                <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Tablet Services</h2>
-                <div class="mx-auto my-2 h-1 w-15 rounded bg-primary"></div>
-                <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div
-                class="bg-white space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
-                <img src="service-lp.png" alt="" class="w-20 rounded-full mx-auto">
-                <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Laptop Services</h2>
-                <div class="mx-auto my-2 h-1 w-15 rounded bg-primary"></div>
-                <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div
-                class="bg-gray-100 space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
-                <img src="service-pc.png" alt="" class="w-20 rounded-full mx-auto">
-                <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">PC Services</h2>
-                <div class="mx-auto my-2 h-1 w-15 rounded bg-primary"></div>
-                <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+    <!-- SERVICES SECTION  -->
 
+    <section id="services" class="text-center my-10 md:my-20 space-y-6 mt-0 md:mt-[-100px] z-10 relative">
+        <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-6 md:px-20 py-10">
+                <div
+                    class="bg-white space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+                    <img src="service-mobile.png" alt="" class="w-20 rounded-full mx-auto">
+                    <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Mobile Services
+                    </h2>
+                    <div class="mx-auto my-2 h-1 w-15 rounded bg-primary"></div>
+                    <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div
+                    class="bg-gray-100 space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+                    <img src="service-tablet.png" alt="" class="w-20 rounded-full mx-auto">
+                    <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Tablet Services
+                    </h2>
+                    <div class="mx-auto my-2 h-1 w-15 rounded bg-primary"></div>
+                    <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div
+                    class="bg-white space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+                    <img src="service-lp.png" alt="" class="w-20 rounded-full mx-auto">
+                    <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">Laptop Services
+                    </h2>
+                    <div class="mx-auto my-2 h-1 w-15 rounded bg-primary"></div>
+                    <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div
+                    class="bg-gray-100 space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-primary transition-all duration-200">
+                    <img src="service-pc.png" alt="" class="w-20 rounded-full mx-auto">
+                    <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-black">PC Services</h2>
+                    <div class="mx-auto my-2 h-1 w-15 rounded bg-primary"></div>
+                    <p class="text-center text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+            </div>
         </div>
-    </section>
-
-    <section class="text-center my-10 md:my-20 space-y-6">
         <h2 class="text-xl text-primary font-semibold">SERVICES</h2>
         <h1 class="text-black text-3xl md:text-5xl font-bebas ">choose fixman services</h1>
 
@@ -139,6 +148,7 @@
         </div>
     </section>
 
+    <!-- BENEFITS SECTION  -->
     <section class="bg-gray-100 py-10 md:py-20 px-6 md:px-20 space-y-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div class="h-50 md:h-[500px]">
@@ -168,7 +178,8 @@
         </div>
     </section>
 
-    <section class="py-10 md:py-20 px-6 md:px-20 space-y-10">
+    <!-- ABOUT US SECTION  -->
+    <section id="about-us" class="py-10 md:py-20 px-6 md:px-20 space-y-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div class="space-y-6">
                 <h2 class="font-poppins text-primary font-semibold text-xl">ABOUT US</h2>
@@ -187,6 +198,7 @@
         </div>
     </section>
 
+    <!-- PROCESS SECTION  -->
     <section class="px-6 md:px-20 py-12 text-center space-y-6 bg-white">
         <!-- Section Header -->
         <h2 class="text-primary font-poppins text-xl font-semibold tracking-widest">PROCESS</h2>
@@ -264,7 +276,8 @@
         </div>
     </section>
 
-    <section class="h-auto relative py-16 bg-[url('/home-bg-3.jpg')] bg-cover bg-center bg-no-repeat">
+    <!-- FAQ SECTION  -->
+    <section id="faqs" class="h-auto relative py-16 bg-[url('/home-bg-3.jpg')] bg-cover bg-center bg-no-repeat">
         <div class="absolute inset-0 bg-black/80"></div>
         <div class="relative z-10">
 
@@ -424,12 +437,14 @@
         </div>
     </section>
 
+    <!-- TESTIMONIAL SECTION  -->
     <section>
         <div class="text-center space-y-6 py-10 md:py-20 px-6 md:px-20">
             <h2 class="text-primary font-poppins font-semibold text-lg">TESTIMONIALS</h2>
             <h1 class="font-bebas text-4xl md:text-5xl font-bold">what people say about us</h1>
             <div class="mx-auto h-1 w-20 bg-primary rounded"></div>
-            <p class="text-gray text-md mx-auto w-[100%] md:w-[50%] md:text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            <p class="text-gray text-md mx-auto w-[100%] md:w-[50%] md:text-lg">Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Ut elit
                 tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-6">
@@ -495,11 +510,13 @@
         </div>
     </section>
 
-    <section class="bg-gray-100 px-6 md:px-20 py-12 text-center md:text-left">
+    <!-- CONTACT SECTION  -->
+    <section id="contact" class="bg-gray-100 px-6 md:px-20 py-12 text-center md:text-left">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-30">
             <div class="h-auto space-y-4 my-auto">
                 <h2 class="text-lg text-primary font-semibold">CONTACT</h2>
-                <h1 class="font-bebas text-4xl md:text-5xl font-bold leading-15">Have a Questions? Let's Connect With Us!</h1>
+                <h1 class="font-bebas text-4xl md:text-5xl font-bold leading-15">Have a Questions? Let's Connect With
+                    Us!</h1>
                 <div class="mx-auto md:mx-0 h-1 w-20 bg-primary rounded"></div>
                 <p class="mb-15 text-gray text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
                     tellus, luctus nec ullamcorper
@@ -545,6 +562,47 @@
         </div>
 
     </section>
+
+    <!-- FOOTER  -->
+    <footer class="bg-black text-white px-6 md:px-20 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <!-- Logo & Description -->
+            <div class="space-y-4">
+                <img src="logo2.png" alt="Company Logo" class="w-24">
+                <p class="text-white text-md leading-relaxed font-poppins">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                    mattis, pulvinar dapibus leo.
+                </p>
+            </div>
+
+            <!-- Company Links -->
+            <div class="flex md:items-center flex-col">
+                <h2 class="text-lg font-semibold mb-4">Company</h2>
+                <ul class="space-y-2 text-white text-md">
+                    <li><a href="#about-us" class="hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="#services" class="hover:text-primary transition-colors">Services</a></li>
+                    <li><a href="#faqs" class="hover:text-primary transition-colors">FAQs</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h2 class="text-lg font-semibold mb-4">Contact</h2>
+                <p class="text-white text-md"><i class="fa-solid fa-location-dot text-primary"></i> London Tower Building</p>
+                <p class="text-white text-md mt-2"><i class="fa-solid fa-phone-flip text-primary"></i> (001) 9123 1231</p>
+                <p class="text-white text-md mt-1"><i class="fa-solid fa-envelope text-primary"></i> contact@mail.com</p>
+            </div>
+
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-gray mt-10 pt-6 text-center text-sm text-gray">
+            &copy; 2025 Fixman. All rights reserved.
+        </div>
+    </footer>
+
     <script src="./src/main.js"></script>
 </body>
 
