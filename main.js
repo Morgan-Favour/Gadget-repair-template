@@ -76,4 +76,8 @@ function openModal() {
     if (e.target === modal) {
       closeModal();
     }
-  });
+  }); 
+
+
+
+  // document.
