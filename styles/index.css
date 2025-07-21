@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "talwindcss";
+
+.btn-gr-primary {
+  @apply bg-gr-primary text-gr-white py-3 px-6 rounded-full;
+}
+
+.btn-gr-secondary {
+  @apply bg-gr-black text-gr-white py-5 px-10  rounded-full hover:bg-white hover:text-black transition-colors duration-300;
+}
+
+.bg-slider {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  position: relative;
+}
+
+.bg-slider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+  z-index: 1;
+}
+
+.bg-slider > * {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+}

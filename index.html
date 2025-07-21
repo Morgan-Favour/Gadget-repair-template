@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-clifford: #da373d;
+            --color-gr-gray: #7a7a7a;
+            --color-gr-primary: #cf261a;
+            --color-gr-black: #171b25;
+            --color-gr-white: #ffffff;
+
+            --font-bebas: "Bebas Neue", sans-serif;
+            --font-poppins: "Poppins", sans-serif;
+         }
+    </style>
+      <style>
+    .btn-gr-secondary {
+      @apply bg-gr-black text-gr-white py-5 px-10 rounded-full transition-colors duration-300;
+    }
+
+    .btn-gr-secondary:hover {
+      @apply bg-white text-black;
+    }
+  </style>
+
+    <title>Vite App</title>
+</head>
+
+<body class="scroll-smooth">
+
+    <!-- HEADER  -->
+    <header class="fixed top-0 z-50 w-full bg-gr-white">
+        <!-- SUB NAVIGATION -->
+        <div class="hidden md:flex space-x-4 justify-between px-20 py-4 border-b border-gray-200">
+            <div>
+                <ul class="flex space-x-4 items-center">
+                    <li><a href=""><i class="fa-brands fa-facebook text-gr-primary"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-x-twitter text-gr-primary"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-youtube text-gr-primary"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="flex justify-between items-center space-x-10">
+                    <li><i class="fa-solid fa-envelope text-gr-primary"></i> contact@fixman.com</li>
+                    <li><i class="fa-solid fa-phone-flip text-gr-primary"></i> (001) 1231 2341</li>
+                    <li> <i class="fa-solid fa-clock text-gr-primary"></i> Mon - Fri: 08:00 - 17:00</li>
+                </ul>
+            </div>
+        </div>
+        <!-- MAIN NAVIGATION  -->
+        <nav class="flex items-center justify-between px-6 md:px-20 py-4 bg-gr-white w-full">
+            <!-- Logo -->
+            <img src="./assets/logo.png" alt="Logo" class="w-20 md:w-32 h-auto" />
+
+            <!-- Hamburger Button (Mobile Only) -->
+            <button id="menu-toggle" class="md:hidden text-2xl text-color-gr-black focus:outline-none"
+                aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i></button><!-- close menu-->
+
+            <!-- Navigation Links -->
+            <ul id="menu"
+                class="fixed inset-y-0 right-0 w-64 bg-gr-white shadow-md transform translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:flex md:flex-row md:space-x-10 md:w-auto md:shadow-none z-20">
+                <li class="md:hidden flex justify-end p-4"><button id="menu-close"
+                        class="text-2xl text-color-gr-black focus:outline-none" aria-label="Close Menu"><i
+                            class="fa-solid fa-close"></i></button></li> <!-- close menu-->
+                <li><a href="#about-us" class="block px-4 py-2 text-color-gr-black font-poppins hover:text-gr-primary">
+                        About Us</a></li>
+                <li><a href="#services"
+                        class="block px-4 py-2 text-gr-black font-poppins hover:text-gr-primary">Services</a></li>
+                <li><a href="#faqs" class="block px-4 py-2 text-color-gr-black font-poppins hover:text-gr-primary">
+                        FAQs</a></li>
+                <li><a href="#contact"
+                        class="block px-4 py-2 text-gr-black font-poppins hover:text-gr-primary">Contact</a></li>
+                <li><a href="#" class="block bg-gr-primary text-gr-white py-3 px-6 rounded-full text-center">BookNow</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- HERO SECTION  -->
+    <main class="bg-slider min-h-screen flex py-10 relative bg-gr-gray mt-0 md:mt-20">
+        <div class="absolute inset-0 bg-[url('/home-bg-1.jpg')] bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out"
+            id="bg-1"></div>
+        <div class="absolute inset-0 bg-[url('/home-bg-2.jpg')] bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out"
+            id="bg-2"></div>
+        <div class="absolute inset-0 bg-[url('/home-bg-3.jpg')] bg-cover bg-center opacity-0 transition-opacity duration-1000 ease-in-out"
+            id="bg-3"></div>
+        <div
+            class="relative z-10 flex flex-col md:flex-row justify-between px-6 md:px-20 py-4 w-full text-center md:text-left items-center my-10">
+            <div class="w-full md:w-[50%]">
+                <h1 class="text-4xl md:text-[100px] font-bebas text-gr-white">Best Phone and <br> Laptop Repair
+                    <br>Service
+                </h1>
+                <p class="pr-6 py-10 text-gr-white font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
+                    nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <a href="" class="bg-gr-black font-poppins text-gr-white py-5 px-10 rounded-full transition-colors duration-300">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="mt-10 md:mt-0">
+                <img src="./assets/device-broken.png" alt="" class="w-50 md:w-65 h-auto mx-auto align-left">
+            </div>
+        </div>
+    </main>
+
+    <!-- SERVICES SECTION  -->
+
+    <section id="services" class="text-center my-10 md:my-20 space-y-6 mt-0 md:mt-[-100px] z-10 relative">
+        <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-6 md:px-20 py-10">
+                <div
+                    class="bg-gr-white space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-gr-primary transition-all duration-200">
+                    <img src="./assets/service-mobile.png" alt="" class="w-20 rounded-full mx-auto">
+                    <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-gr-black">Mobile
+                        Services
+                    </h2>
+                    <div class="mx-auto my-2 h-1 w-15 rounded bg-gr-primary"></div>
+                    <p class="text-center text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div
+                    class="bg-gray-100 space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-gr-primary transition-all duration-200">
+                    <img src="./assets/service-tablet.png" alt="" class="w-20 rounded-full mx-auto">
+                    <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-gr-black">Tablet
+                        Services
+                    </h2>
+                    <div class="mx-auto my-2 h-1 w-15 rounded bg-gr-primary"></div>
+                    <p class="text-center text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div
+                    class="bg-gr-white space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-gr-primary transition-all duration-200">
+                    <img src="./assets/service-lp.png" alt="" class="w-20 rounded-full mx-auto">
+                    <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-gr-black">Laptop
+                        Services
+                    </h2>
+                    <div class="mx-auto my-2 h-1 w-15 rounded bg-gr-primary"></div>
+                    <p class="text-center text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div
+                    class="bg-gray-100 space-y-6 h-full px-6 py-10 shadow-lg hover:border-b-4 hover:border-gr-primary transition-all duration-200">
+                    <img src="./assets/service-pc.png" alt="" class="w-20 rounded-full mx-auto">
+                    <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-color-gr-black">PC
+                        Services</h2>
+                    <div class="mx-auto my-2 h-1 w-15 rounded bg-gr-primary"></div>
+                    <p class="text-center text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+            </div>
+        </div>
+        <h2 class="text-xl text-gr-primary font-semibold">SERVICES</h2>
+        <h1 class="text-color-gr-black text-3xl md:text-5xl font-bebas ">choose fixman services</h1>
+        <div class="mx-auto my-2 h-1 w-15 rounded bg-gr-primary"></div>
+        <p class="w-[100%] md:w-[50%] text-gr-gray mx-auto font-poppins text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+        <div class="grid grid-cols-1 md:grid-cols- lg:grid-cols-3 gap-10 px-6 md:px-20 py-10">
+            <div
+                class="bg-gr-black h-full space-y-8 p-10 shadow-lg hover:border-b-4 hover:border-gr-primary transition-all duration-200">
+                <img src="./assets/icon-post1.pn" alt="" class="w-20 rounded-full mx-auto">
+                <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-gr-white">Mobile Services</h2>
+                <div class="mx-auto my-2 h-1 w-15 rounded bg-gr-primary"></div>
+                <p class="text-center text-gr-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="" class="bg-gr-primary text-gr-white py-3 px-6 rounded-full">BOOK NOW</a>
+            </div>
+            <div
+                class="bg-gr-black h-full space-y-8 p-10 shadow-lg hover:border-b-4 hover:border-gr-primary transition-all duration-200">
+                <img src="./assets/icon-post2.png" alt="" class="w-20 rounded-full mx-auto">
+                <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-gr-white">Mobile Services</h2>
+                <div class="mx-auto my-2 h-1 w-15 rounded bg-gr-primary"></div>
+                <p class="text-center text-gr-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="" class="bg-gr-primary text-gr-white py-3 px-6 rounded-full">BOOK NOW</a>
+            </div>
+            <div
+                class="bg-gr-black h-full space-y-8 p-10 shadow-lg hover:border-b-4 hover:border-gr-primary transition-all duration-200">
+                <img src="./assets/icon-post3.png" alt="" class="w-20 rounded-full mx-auto">
+                <h2 class="text-md md:text-lg font-semibold font-poppins text-center text-gr-white">Mobile Services</h2>
+                <div class="mx-auto my-2 h-1 w-15 rounded bg-gr-primary"></div>
+                <p class="text-center text-gr-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="" class="bg-gr-primary text-gr-white py-3 px-6 rounded-full">BOOK NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION  -->
+    <section class="bg-gray-100 py-10 md:py-20 px-6 md:px-20 space-y-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="h-50 md:h-[500px]">
+                <img src="./assets/home-bg-1.jpg" alt=""
+                    class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+            </div>
+            <div class="h-auto space-y-6">
+                <h2 class="text-xl text-gr-primary font-semibold">BENEFITS</h2>
+                <h1 class="text-color-gr-black text-3xl md:text-5xl font-bebas font-bold">Why Choose FixMan For Your
+                    Device?</h1>
+                <div class="my-2 h-[3px] w-15 rounded bg-gr-primary"></div>
+                <p class="font-poppins text-gr-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                    tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <ul class="font-poppins text-gr-gray space-y-4 pb-4">
+                    <li> <span class="text-green-600"><i class="fa-solid fa-check"> </i> </span> Lorem ipsum Dolor sit
+                        amet consectur</li>
+                    <li> <span class="text-green-600"><i class="fa-solid fa-check"> </i> </span> Lorem ipsum Dolor sit
+                        amet consectur</li>
+                    <li> <span class="text-green-600"><i class="fa-solid fa-check"> </i> </span> Lorem ipsum Dolor sit
+                        amet consectur</li>
+                    <li> <span class="text-green-600"><i class="fa-solid fa-check"> </i> </span> Lorem ipsum Dolor sit
+                        amet consectur</li>
+                    <li> <span class="text-green-600"><i class="fa-solid fa-check"> </i> </span> Lorem ipsum Dolor sit
+                        amet consectur</li>
+                </ul>
+                <a href="" class="bg-gr-primary text-gr-white py-3 px-6 rounded-full">BOOK APPOINTMENT</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION  -->
+    <section id="about-us" class="py-10 md:py-20 px-6 md:px-20 space-y-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+                <h2 class="font-poppins text-gr-primary font-semibold text-xl">ABOUT US</h2>
+                <h1 class="font-bebas text-gr-black text-3xl md:text-5xl font-bold">Few words about fixman</h1>
+                <div class=" my-2 h-[3px] w-15 rounded bg-gr-primary"></div>
+                <p class="text-gr-gray text-lg pb-4 font-poppins">Curabitur sit amet auctor massa, ac vulputate odio. Fusce egestas,
+                    odio nec
+                    vestibulum euismod, purus dolor vulputate magna, quis molestie sapien nibh quis dolor. Sed efficitur
+                    sem risus, sed condimentum ligula fermentum at.</p>
+
+                <a href="" class="bg-gr-primary text-gr-white py-3 px-6 rounded-full">READ OUR STORY</a>
+            </div>
+            <div>
+                <img src="./assets/home-bg-1.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION  -->
+    <section class="px-6 md:px-20 py-12 text-center space-y-6 bg-gr-white">
+        <!-- Section Header -->
+        <h2 class="text-gr-primary font-poppins text-xl font-semibold tracking-widest">PROCESS</h2>
+        <h1 class="text-gr-black font-bebas text-4xl md:text-5xl font-bold uppercase">Comprehensive Device Repair
+        </h1>
+        <div class="mx-auto h-1 w-20 bg-gr-primary rounded"></div>
+        <p class="text-gr-gray max-w-xl mx-auto text-base md:text-lg font-poppins leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullcorper mattis,
+            pulvinar dapibus leo.
+        </p>
+
+        <!-- Grid Section -->
+        <div class="grid lg:grid-cols-3 gap-10 py-15 items-start">
+
+            <!-- Left Column -->
+            <div class="space-y-8 mt-10">
+                <!-- Card 1 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-2 md:gap-4 text center md:text-right">
+                    <img src="./assets/repair1.png" alt="Water Damage Repair"
+                        class="w-15 h-auto md:w-20 object-contain" />
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-gr-black font-poppins">Water Damage Repair</h3>
+                        <p class="text-md text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-2 md:gap-4 text center md:text-right">
+                    <img src="./assets/repair2.png" alt="Screen Replacement"
+                        class="w-15 h-auto md:w-20 object-contain" />
+                    <div class="space-y-6">
+                        <h3 class="text-lg font-semibold text-gr-black font-poppins">Screen Replacement</h3>
+                        <p class="ttext-md text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-2 md:gap-4 text center md:text-right">
+                    <img src="./assets/repair3.png" alt="Battery Service" class="w-15 h-auto md:w-20 object-contain" />
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-gr-black font-poppins">Battery Service</h3>
+                        <p class="text-md text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Image -->
+            <div class="flex justify-center items-center">
+                <img src="./assets/device-broken.png" alt="Center Device" class="max-w-xs md:max-w-md lg:max-w-full" />
+            </div>
+
+            <!-- Right Column -->
+            <div class="space-y-8 mt-10">
+                <!-- Card 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+                    <img src="./assets/repair4.png" alt="Camera Repair" class="w-15 h-auto md:w-20 object-contain" />
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-gr-black font-poppins">Camera Repair</h3>
+                        <p class="text-md text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+                    <img src="./assets/repair5.png" alt="Charging Port Fix"
+                        class="w-15 h-auto md:w-20 object-contain" />
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-gr-black font-poppins">Charging Port Fix</h3>
+                        <p class="text-md text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+                    <img src="./assets/repair6.png" alt="Speaker Repair" class="w-15 h-auto md:w-20 object-contain" />
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-gr-black font-poppins">Speaker Repair</h3>
+                        <p class="text-md text-gr-gray font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ SECTION  -->
+    <section id="faqs" class="h-auto relative py-16 bg-[url('./assets/home-bg-3.jpg')] bg-cover bg-center bg-no-repeat">
+        <div class="absolute inset-0 bg-gr-black/80"></div>
+        <div class="relative z-10">
+
+
+            <!-- Header -->
+            <div class="grid grid-cols-1 my-10 md:grid-cols-2 gap-10 px-6 md:px-20">
+                <div class="space-y-4">
+                    <h2 class="text-gr-primary text-lg font-poppins uppercase tracking-widest font-semibold">FAQ</h2>
+                    <h1 class="text-gr-white font-bebas text-4xl md:text-5xl">Frequently Asked Questions</h1>
+                </div>
+                <div class="my-auto">
+                    <p class="text-gr-white leading-relaxed text-gr-white text-lg">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                        mattis,
+                        pulvinar dapibus leo.
+                    </p>
+                </div>
+                <div class="h-1 w-20 bg-gr-primary rounded"></div>
+            </div>
+
+            <!-- FAQ Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 px-6 md:px-20 mt-10">
+
+                <!-- LEFT FAQ COLUMN -->
+                <div class="space-y-4">
+                    <!-- Question Item -->
+                    <div class="border border-gray-200 rounded-lg bg-gr-white">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 font-semibold text-left text-gr-black toggle-btn">
+                            What is your turnaround time?
+                            <!-- Toggle Icons inside the button -->
+                            <span class="text-xl icon-toggle">
+                                <i class="fa-solid fa-plus block"></i>
+                                <i class="fa-solid fa-minus !hidden"></i>
+                            </span>
+
+                        </button>
+                        <div class="px-4 pb-4 text-gr-gray hidden toggle-content">
+                            We usually complete repairs within 24–48 hours depending on the issue.
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg bg-gr-white">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 font-semibold text-left text-gr-black toggle-btn">
+                            Do you offer warranty?
+                            <!-- Toggle Icons inside the button -->
+                            <span class="text-xl icon-toggle">
+                                <i class="fa-solid fa-plus block"></i>
+                                <i class="fa-solid fa-minus !hidden"></i>
+                            </span>
+
+                        </button>
+                        <div class="px-4 pb-4 text-gr-gray hidden toggle-content">
+                            Yes, we offer a 90-day warranty on all repairs.
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg bg-gr-white">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 font-semibold text-left text-gr-black toggle-btn">
+                            Do you offer warranty?
+                            <!-- Toggle Icons inside the button -->
+                            <span class="text-xl icon-toggle">
+                                <i class="fa-solid fa-plus block"></i>
+                                <i class="fa-solid fa-minus !hidden"></i>
+                            </span>
+
+                        </button>
+                        <div class="px-4 pb-4 text-gr-gray hidden toggle-content">
+                            Yes, we offer a 90-day warranty on all repairs.
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg bg-gr-white">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 font-semibold text-left text-gr-black toggle-btn">
+                            Do you offer warranty?
+                            <!-- Toggle Icons inside the button -->
+                            <span class="text-xl icon-toggle">
+                                <i class="fa-solid fa-plus block"></i>
+                                <i class="fa-solid fa-minus !hidden"></i>
+                            </span>
+
+                        </button>
+                        <div class="px-4 pb-4 text-gr-gray hidden toggle-content">
+                            Yes, we offer a 90-day warranty on all repairs.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT FAQ COLUMN -->
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg bg-gr-white">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 font-semibold text-left text-gr-black toggle-btn">
+                            Can I track my repair?
+                            <!-- Toggle Icons inside the button -->
+                            <span class="text-xl icon-toggle">
+                                <i class="fa-solid fa-plus block"></i>
+                                <i class="fa-solid fa-minus !hidden"></i>
+                            </span>
+
+                        </button>
+                        <div class="px-4 pb-4 text-gr-gray hidden toggle-content">
+                            Yes, you’ll receive tracking updates via email and SMS.
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg bg-gr-white">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 font-semibold text-left text-gr-black toggle-btn">
+                            Can I track my repair?
+                            <!-- Toggle Icons inside the button -->
+                            <span class="text-xl icon-toggle">
+                                <i class="fa-solid fa-plus block"></i>
+                                <i class="fa-solid fa-minus !hidden"></i>
+                            </span>
+
+                        </button>
+                        <div class="px-4 pb-4 text-gr-gray hidden toggle-content">
+                            Yes, you’ll receive tracking updates via email and SMS.
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg bg-gr-white">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 font-semibold text-left text-gr-black toggle-btn">
+                            Can I track my repair?
+                            <!-- Toggle Icons inside the button -->
+                            <span class="text-xl icon-toggle">
+                                <i class="fa-solid fa-plus block"></i>
+                                <i class="fa-solid fa-minus !hidden"></i>
+                            </span>
+
+                        </button>
+                        <div class="px-4 pb-4 text-gr-black hidden toggle-content">
+                            Yes, you’ll receive tracking updates via email and SMS.
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg bg-gr-white">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 font-semibold text-left text-gr-black toggle-btn">
+                            Do you use original parts?
+                            <!-- Toggle Icons inside the button -->
+                            <span class="text-xl icon-toggle">
+                                <i class="fa-solid fa-plus block"></i>
+                                <i class="fa-solid fa-minus !hidden"></i>
+                            </span>
+
+                        </button>
+                        <div class="px-4 pb-4 text-gr-gray hidden toggle-content">
+                            We use high-quality OEM or original parts based on availability and your preference.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL SECTION  -->
+    <section>
+        <div class="text-center space-y-6 py-10 md:py-20 px-6 md:px-20">
+            <h2 class="text-gr-primary font-poppins font-semibold text-lg">TESTIMONIALS</h2>
+            <h1 class="font-bebas text-4xl md:text-5xl font-bold">what people say about us</h1>
+            <div class="mx-auto h-1 w-20 bg-gr-primary rounded"></div>
+            <p class="text-gr-gray text-md mx-auto w-[100%] md:w-[50%] md:text-lg">Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Ut elit
+                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-6">
+                <div class="bg-gr-black flex flex-col text-left p-6 space-y-6">
+                    <!-- STARS -->
+                    <span class="block text-gr-primary">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <p class="text-gr-white font-poppins font-semibold text-lg">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Ut elit tellus, luctus nec ullamcor per mattis, pulvinar dapibus leo.</p>
+                    <div class="flex space-x-6">
+                        <img src="./assets/team1.png" alt="" class="w-15 rounded-full">
+                        <div class="text-gr-white font-poppins">
+                            <h2 class="">John Doe</h2>
+                            <p class="text-sm">Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gr-black flex flex-col text-left p-6 space-y-6">
+                    <!-- STARS -->
+                    <span class="block text-gr-primary">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <p class="text-gr-white font-poppins font-semibold text-lg">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Ut elit tellus, luctus nec ullamcor per mattis, pulvinar dapibus leo.</p>
+                    <div class="flex space-x-6">
+                        <img src="./assets/team2.png" alt="" class="w-15 rounded-full">
+                        <div class="text-gr-white font-poppins">
+                            <h2 class="">John Doe</h2>
+                            <p class="text-sm">Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gr-black flex flex-col text-left p-6 space-y-6">
+                    <!-- STARS -->
+                    <span class="block text-gr-primary">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <p class="text-gr-white font-poppins font-semibold text-lg">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Ut elit tellus, luctus nec ullamcor per mattis, pulvinar dapibus leo.</p>
+                    <div class="flex space-x-6">
+                        <img src="./assets/team3.png" alt="" class="w-15 rounded-full">
+                        <div class="text-gr-white font-poppins">
+                            <h2 class="">John Doe</h2>
+                            <p class="text-sm">Designer</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION  -->
+    <section id="contact" class="bg-gray-100 px-6 md:px-20 py-12 text-center md:text-left">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-30">
+            <div class="h-auto space-y-4 my-auto">
+                <h2 class="text-lg text-gr-primary font-semibold">CONTACT</h2>
+                <h1 class="font-bebas text-4xl md:text-5xl font-bold leading-15">Have a Questions? Let's Connect With
+                    Us!</h1>
+                <div class="mx-auto md:mx-0 h-1 w-20 bg-gr-primary rounded"></div>
+                <p class="mb-15 text-gr-gray text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                    tellus, luctus nec ullamcorper
+                    mattis, pulvinar dapibus leo.</p>
+                <button class="bg-gr-primary text-gr-white py-3 px-6 rounded-full" onclick="openModal()">CONTACT US</button>
+
+            </div>
+            <div>
+                <img src="./assets/contact-person.png" alt="">
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div id="contactModal" class="fixed inset-0 z-50 flex items-center justify-center bg-color-gr-black/50 hidden">
+            <div class="bg-gr-white w-full max-w-lg rounded-lg shadow-lg p-6 relative">
+                <!-- Close Button -->
+                <button onclick="closeModal()"
+                    class="absolute top-2 right-3 text-gray-500 hover:text-color-gr-black text-xl">×</button>
+
+                <!-- Modal Content -->
+                <h2 class="text-2xl font-bebas text-color-gr-black mb-4">Contact Us</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-4 py-2"
+                            placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" class="w-full border border-gray-300 rounded px-4 py-2"
+                            placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea rows="4" class="w-full border border-gray-300 rounded px-4 py-2"
+                            placeholder="Your message..."></textarea>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="bg-gr-primary text-gr-white py-3 px-6 rounded-full">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER  -->
+    <footer class="bg-gr-black text-gr-white px-6 md:px-20 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <!-- Logo & Description -->
+            <div class="space-y-4">
+                <img src="./assets/logo2.png" alt="Company Logo" class="w-24">
+                <p class="text-gr-white text-md leading-relaxed font-poppins">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                    mattis, pulvinar dapibus leo.
+                </p>
+            </div>
+
+            <!-- Company Links -->
+            <div class="flex md:items-center flex-col">
+                <h2 class="text-lg font-semibold mb-4 font-bebas tracking-wider">Company</h2>
+                <ul class="space-y-2 text-gr-white text-md">
+                    <li><a href="#about-us" class="hover:text-gr-primary transition-colors">About Us</a></li>
+                    <li><a href="#services" class="hover:text-gr-primary transition-colors">Services</a></li>
+                    <li><a href="#faqs" class="hover:text-gr-primary transition-colors">FAQs</a></li>
+                    <li><a href="#contact" class="hover:text-gr-primary transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h2 class="text-lg font-semibold mb-4 font-bebas tracking-wider">Contact</h2>
+                <p class="text-gr-white text-md"><i class="fa-solid fa-location-dot text-gr-primary"></i> London Tower
+                    Building</p>
+                <p class="text-gr-white text-md mt-2"><i class="fa-solid fa-phone-flip text-gr-primary"></i> (001) 9123
+                    1231</p>
+                <p class="text-gr-white text-md mt-1"><i class="fa-solid fa-envelope text-gr-primary"></i>
+                    contact@mail.com</p>
+            </div>
+
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-gray mt-10 pt-6 text-center text-sm text-gray">
+            © 2025 Fixman. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
